@@ -21,6 +21,7 @@ LOCAL_VENDOR_MODULE := true
 
 include $(BUILD_HEADER_LIBRARY)
 
+ifneq ($(TARGET_PROVIDES_PREBUILT_PAL),true)
 ifneq ($(QCPATH),)
 
 include $(CLEAR_VARS)
@@ -226,3 +227,4 @@ include $(PAL_BASE_PATH)/ipc/HwBinders/Android.mk
 
 endif #TARGET_USES_QCOM_MM_AUDIO
 endif #AUDIO_USE_STUB_HAL
+endif #TARGET_PROVIDES_PREBUILT_PAL
